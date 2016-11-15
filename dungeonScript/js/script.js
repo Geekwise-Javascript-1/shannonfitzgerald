@@ -2,8 +2,36 @@ var hero = {}; //empty hero object
 hero.name = prompt('What is your name, hero?');
 
 var monsters = [];
+var monTypes = ['dragon','troll','ogre','wolf','homonculus','bat','orc']
 
 console.log(hero);
+
+moveNorth();
+function moveNorth(){
+  console.log('moving North');
+}
+
+moveEast();
+function moveEast(){
+  console.log('moving East');
+}
+
+moveSouth();
+function moveSouth(){
+  console.log('moving South');
+}
+
+moveWest();
+function moveWest(){
+  console.log('moving West');
+}
+
+var grid = function(x,y){
+  console.log(x);
+  console.log(y);
+}
+(Math.floor((Math.random() * 100) + 1),Math.floor((Math.random() * 100) + 1));
+
 // var gameInit = {};
 // gameStart();
 //
