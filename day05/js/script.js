@@ -67,12 +67,22 @@ var strength = [5,4,3,2,1];
 var text = '';
 var i = 0;
 while( i < monsters.length ){
-  console.log(monsters[i] + ' has a strength of ' + strength[i] + ' points');
+  console.log( monsters[i] + ' has a strength of ' + strength[i] + ' points' );
   i++;
 }
 
 
+// scope:
 
+// var a = 'outside'; <--not scoped
+//
+// function test(){
+//   b = 'inside'; <--not scoped
+//   var c = 'also inside';  <--is scoped
+//   console.log(b);
+// }
+//
+// test();
 
 
 
