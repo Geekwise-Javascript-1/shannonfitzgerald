@@ -284,16 +284,42 @@ function battle(player){
   }else {
     takingDamage = hero;
   }
-  while (player.hp > 0 && takingDamage.hp > 0) {
+  while(player.hp > 0 && takingDamage.hp > 0) {
     console.log(player.name + ' has ' + player.hp + ' health.');
 
     var hit = Math.ceil(player.hp / 3);
     takingDamage.hp -= hit;
 
     console.log(takingDamage.name + ' has taken ' + hit + ' damage.');
+    checkIfAlive(takingDamage, hit);
   }
 }
 
+function checkIfAlive(takingDamage, hit) {
+    console.log(takingDamage.name);
+    console.log(takingDamage.hp);
+
+    if (takingDamage.hp <= 0) {
+        if (takingDamage.name === hero.name) {
+          alert('You have died!');
+          location.reload();
+        }else {
+          alert('You have defeated the ' + monster.name + '!');
+        }
+    }else {
+      if (takingDamage.name === hero.name) {
+          alert('You have taken ' + hit + ' damage!');
+          battle(hero);
+      }else {
+        alert('You have hit the ' + monster.name + ' with ' + hit + ' damage!');
+        battle(monster);
+      }
+    }
+}
+
+// Add a visual of how many hp you have left
+// Add finding items that make you stronger
+// javascript30.com
 
 
 
